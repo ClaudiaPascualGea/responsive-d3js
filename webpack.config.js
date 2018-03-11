@@ -8,9 +8,8 @@ var basePath = __dirname;
 module.exports = {
   context: path.join(basePath, "src"),
   resolve: {
-    extensions: [".js"],
+    extensions: [".js", ".json"],
   },
-
   entry: {
     app: "./main.js",
     appStyles: [
@@ -33,6 +32,13 @@ module.exports = {
   },
 
   module: {
+    loaders: [
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        loader: 'json-loader'
+      }
+    ],
     rules: [
       {
         test: /\.scss$/,
