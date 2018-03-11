@@ -1,5 +1,6 @@
 body {
-  position: relative; }
+  position: relative;
+  max-width: 960px; }
 
 .g-tooltip {
   font-family: "Helvetica Neue", "Helvetica", Arial sans-serif;
@@ -33,7 +34,7 @@ body {
   width: 300px;
   position: absolute;
   padding: 10px;
-  bottom: 0;
+  bottom: 80px;
   right: 0;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 2px; }
@@ -55,10 +56,10 @@ li.key {
   border-top-width: 10px;
   border-top-style: solid;
   font-size: 10px;
-  width: 10%;
+  width: 25%;
   height: 10px;
   padding-left: 0;
   padding-right: 0;
   vertical-align: top; }
 
-/*# sourceMappingURL=0a782ea89d1c6783904e.appStyles.css.map*/
+/*# sourceMappingURL=b8ccec98baa647669df6.appStyles.css.map*/

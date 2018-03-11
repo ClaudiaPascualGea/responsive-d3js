@@ -11655,6 +11655,55 @@ function handleMouseMove(event) {
     tooltip.style("left", mouseX - 100 + "px").style("top", mouseY + 25 + "px");
 }
 
+console.log(colors);
+var data = [
+    { party: 'PP', color: '#0cb2ff'},
+    { party: 'PSOE', color: '#e81515'},
+    { party: 'Podemos', color: '#9a569a'},
+    { party: 'ECP', color: '#01c6a4'},
+];
+
+var legend = __WEBPACK_IMPORTED_MODULE_0_d3__["d" /* select */]("body")
+    .append("div")
+    .attr("class", "g-legend")
+    .append("span")
+    .text("Elections result")
+    .attr("class", "g-legendText");
+
+var legendList = __WEBPACK_IMPORTED_MODULE_0_d3__["d" /* select */](".g-legend")
+    .append("ul")
+    .attr("class", "list-inline");
+
+var keys = legendList.selectAll("li.key").data(data);
+
+keys
+    .enter()
+    .append("li")
+    .attr("class", "key")
+    .style("border-top-color", function (d) {
+        return d.color;
+    })
+    .text(function (d) {
+        return d.party;
+    });
+
+// var legend = d3
+//     .select("body")
+//     .append('g')
+//     .attr('class', 'legend')
+//       .selectAll('text')
+//       .data(data)
+//         .enter()
+//           .append('text')
+//             .text(function(d) { 
+//                 return '• ' + d.product;
+//             })
+//             .attr('fill', function(d) { 
+//                 return color(d.product); 
+//             })
+//             .attr('y', function(d, i) { 
+//                 return 20 * (i + 1); 
+//             })  
 
 // Lets define a chart legend (styled li including the range colors)
 // var legend = d3
@@ -11662,24 +11711,25 @@ function handleMouseMove(event) {
 //     .append("div")
 //     .attr("class", "g-legend")
 //     .append("span")
-//     .text("People per km2")
+//     .text("Elections result")
 //     .attr("class", "g-legendText");
 
-var legendList = __WEBPACK_IMPORTED_MODULE_0_d3__["d" /* select */](".g-legend")
-    .append("ul")
-    .attr("class", "list-inline");
+// var legendList = d3
+//     .select(".g-legend")
+//     .append("ul")
+//     .attr("class", "list-inline");
 
-var keys = legendList.selectAll("li.key").data(color.range());
+// var keys = legendList.selectAll("li.key").data(color.range());
 
-keys
-    .enter()
-    .append("li")
-    .attr("class", "key")
-    .style("border-top-color", String)
-    .text(function (d) {
-        var r = color.invertExtent(d);
-        return r[0];
-    });
+// keys
+//     .enter()
+//     .append("li")
+//     .attr("class", "key")
+//     .style("border-top-color", String)
+//     .text(function (d) {
+//         var r = color.invertExtent(d);
+//         return r[0];
+//     });
 
 // Let's load the geo info (name + path) of each municipality (municipio),
 // plus the geo info (name + path) of each regin (comunidad autonoma),
@@ -11817,7 +11867,6 @@ function ready(error) {
     });
     map.init();
 }
-
 
 /***/ }),
 /* 212 */
@@ -42669,4 +42718,4 @@ module.exports = {"type":"Topology","transform":{"scale":[0.00036946150051793034
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=0a782ea89d1c6783904e.app.js.map
+//# sourceMappingURL=b8ccec98baa647669df6.app.js.map
