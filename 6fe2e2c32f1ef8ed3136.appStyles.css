@@ -1,6 +1,7 @@
 body {
   position: relative;
-  max-width: 960px; }
+  max-width: 960px;
+  padding-top: 40px; }
 
 .g-tooltip {
   font-family: "Helvetica Neue", "Helvetica", Arial sans-serif;
@@ -62,4 +63,4 @@ li.key {
   padding-right: 0;
   vertical-align: top; }
 
-/*# sourceMappingURL=b8ccec98baa647669df6.appStyles.css.map*/
+/*# sourceMappingURL=6fe2e2c32f1ef8ed3136.appStyles.css.map*/
