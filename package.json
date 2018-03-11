@@ -18,7 +18,12 @@
     },
     "author": "Claudia Pascual",
     "license": "MIT",
-    "dependencies": {},
+    "dependencies": {
+        "d3": "^4.13.0",
+        "d3-composite-projections": "^1.2.0",
+        "rbush": "^2.0.2",
+        "topojson": "^3.0.2"
+    },
     "devDependencies": {
         "awesome-typescript-loader": "^3.2.3",
         "babel-core": "^6.26.0",
