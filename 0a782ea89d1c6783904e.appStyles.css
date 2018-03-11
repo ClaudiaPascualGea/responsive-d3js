@@ -1,0 +1,64 @@
+body {
+  position: relative; }
+
+.g-tooltip {
+  font-family: "Helvetica Neue", "Helvetica", Arial sans-serif;
+  position: absolute;
+  width: 200px;
+  min-height: 50px;
+  padding: 8px;
+  font-size: 12px;
+  background: white;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 1; }
+
+.g-place {
+  border-bottom: 1px solid #828282;
+  margin-bottom: 5px;
+  padding-bottom: 3px; }
+
+.g-headline {
+  font-size: 16px; }
+
+.g-sub {
+  color: #828282; }
+
+.g-value {
+  float: right; }
+
+.g-legend {
+  font-family: "Helvetica Neue", "Helvetica", Arial sans-serif;
+  width: 300px;
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px; }
+
+.g-legendText {
+  font-size: 12px; }
+
+.list-inline {
+  padding-left: 0;
+  list-style: none; }
+
+ul {
+  margin: 5px auto; }
+
+li {
+  display: inline-block; }
+
+li.key {
+  border-top-width: 10px;
+  border-top-style: solid;
+  font-size: 10px;
+  width: 10%;
+  height: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  vertical-align: top; }
+
+/*# sourceMappingURL=0a782ea89d1c6783904e.appStyles.css.map*/
