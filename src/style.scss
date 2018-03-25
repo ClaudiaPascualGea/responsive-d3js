@@ -1,7 +1,17 @@
 body {
     position: relative;
-    max-width: 960px;
-    padding-top: 40px;
+    max-width: 100vw;
+    overflow: hidden;
+    text-align: right;
+    padding: 10px;
+    background: gray;
+}
+
+#mapContainer {
+    display: inline-block;
+    background: #ffffff;
+    padding: 10px;
+    border: 5px solid lightgreen;
 }
 
 .g-tooltip {
@@ -42,7 +52,7 @@ body {
     position: absolute;
     padding: 10px;
     bottom: 80px;
-    right: 0;
+    right: 20px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 2px;
 }

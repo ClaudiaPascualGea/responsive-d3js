@@ -105,6 +105,8 @@ var mouseX, mouseY;
 
 var width = 960;
 var height = 630;
+var aspect = width / height;
+var elementContainer = '#mapContainer';
 
 var colors1 = [
     "#FEFCED",
@@ -147,7 +149,7 @@ var format = d3.format(".4");
 
 // Let's add a tooltip (it will hook under the body dom item)
 var tooltip = d3
-    .select("body")
+    .select(elementContainer)
     .append("div")
     .attr("class", "g-tooltip")
     .style("opacity", 0);
@@ -162,7 +164,6 @@ function handleMouseMove(event) {
     tooltip.style("left", mouseX - 100 + "px").style("top", mouseY + 25 + "px");
 }
 
-console.log(colors);
 var data = [
     { party: 'PP', color: '#0cb2ff'},
     { party: 'PSOE', color: '#e81515'},
@@ -171,7 +172,7 @@ var data = [
 ];
 
 var legend = d3
-    .select("body")
+    .select(elementContainer)
     .append("div")
     .attr("class", "g-legend")
     .append("span")
@@ -196,50 +197,6 @@ keys
         return d.party;
     });
 
-// var legend = d3
-//     .select("body")
-//     .append('g')
-//     .attr('class', 'legend')
-//       .selectAll('text')
-//       .data(data)
-//         .enter()
-//           .append('text')
-//             .text(function(d) { 
-//                 return '• ' + d.product;
-//             })
-//             .attr('fill', function(d) { 
-//                 return color(d.product); 
-//             })
-//             .attr('y', function(d, i) { 
-//                 return 20 * (i + 1); 
-//             })  
-
-// Lets define a chart legend (styled li including the range colors)
-// var legend = d3
-//     .select("body")
-//     .append("div")
-//     .attr("class", "g-legend")
-//     .append("span")
-//     .text("Elections result")
-//     .attr("class", "g-legendText");
-
-// var legendList = d3
-//     .select(".g-legend")
-//     .append("ul")
-//     .attr("class", "list-inline");
-
-// var keys = legendList.selectAll("li.key").data(color.range());
-
-// keys
-//     .enter()
-//     .append("li")
-//     .attr("class", "key")
-//     .style("border-top-color", String)
-//     .text(function (d) {
-//         var r = color.invertExtent(d);
-//         return r[0];
-//     });
-
 // Let's load the geo info (name + path) of each municipality (municipio),
 // plus the geo info (name + path) of each regin (comunidad autonoma),
 // we can find this json files in the following urls:
@@ -254,11 +211,14 @@ d3.queue()
     // .defer(d3.json, "./content/elections.json")
     .await(ready);
 
+
+var map;
+
 function ready(error) {
     topojson.presimplify(comm);
     topojson.presimplify(el);
-    var map = new spam.ZoomableCanvasMap({
-        element: "body",
+    map = new spam.ZoomableCanvasMap({
+        element: elementContainer,
         zoomScale: 0.8,
         width: width,
         height: height,
@@ -367,12 +327,17 @@ function ready(error) {
                     }
                 },
                 events: {
-                    click: function (parameters, d) {
-                        parameters.map.zoom(d);
-                    }
+                    // click: function (parameters, d) {
+                    //     parameters.map.zoom(d);
+                    // }
                 }
             }
         ]
     });
     map.init();
+
+    d3.select(window).on('resize', resize);
+}
+function resize() {
+   console.log(map.scale(960 * 2.9));
 }
